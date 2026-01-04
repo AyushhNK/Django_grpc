@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package notification;
+
+service NotificationService {
+  rpc SendWelcomeEmail (EmailRequest) returns (EmailResponse);
+}
+
+message EmailRequest {
+  int32 user_id = 1;
+  string email = 2;
+}
+
+message EmailResponse {
+  bool success = 1;
+  string message = 2;
+}
